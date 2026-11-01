@@ -7,6 +7,12 @@ A local, full-stack learning application with two specialist agents:
 
 The backend uses a real **LangGraph** state graph. Its router, planner, specialist, tool, reflection, and checkpoint nodes are connected by edges and conditional routing. A LangGraph in-memory checkpointer is paired with a local JSON session store so conversation turns remain available after the backend restarts.
 
+## GitHub Pages demo
+
+The static website is deployed from `frontend/` by `.github/workflows/deploy-pages.yml`. The workflow builds Vite with the `/Agentic-AI-HUB/` project-site base path and deploys the resulting `frontend/dist` directory. On GitHub, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. The first deployment runs after the workflow is pushed to `main`; check the repository's **Actions** tab for its status.
+
+GitHub Pages hosts static files only; it does not run the Python/FastAPI server. On `github.io`, the UI therefore uses a clearly labeled browser-only demo with sample support and interview responses. To run the full LangGraph-powered backend, follow the local setup instructions below.
+
 ## Learning guide
 
 This project is intended as a small, runnable example for learning how an agent application is assembled. Start with one user request and follow it from the React UI, through the HTTP API, into the LangGraph workflow, and back to the conversation.
