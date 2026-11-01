@@ -9,7 +9,7 @@ The backend uses a real **LangGraph** state graph. Its router, planner, speciali
 
 ## GitHub Pages demo
 
-The project site is built and deployed from `frontend/` by `.github/workflows/deploy-pages.yml`. The workflow builds Vite with the `/Agentic-AI-HUB/` project-site base path and deploys `frontend/dist`. GitHub Pages must use **Settings → Pages → Build and deployment → Source → GitHub Actions**. After frontend changes are pushed to `main`, check the repository's **Actions** tab for the build and deployment status.
+The project site is published from the `main` branch root. `publish-pages.ps1` builds the frontend with the `/Agentic-AI-HUB/` project-site path, then copies the static entry page and bundled assets to the repository root. The root `index.html` makes Pages show the application instead of rendering this README. After changing frontend code, run `.\publish-pages.ps1`, commit the generated root `index.html` and `agentic-ai-hub-assets/`, then push to `main`. GitHub Pages automatically publishes the branch update; check the repository's **Actions** tab for the Pages build status.
 
 GitHub Pages hosts static files only; it does not run the Python/FastAPI server. On `github.io`, the UI therefore uses a clearly labeled browser-only demo with sample support and interview responses. To run the full LangGraph-powered backend, follow the local setup instructions below.
 
